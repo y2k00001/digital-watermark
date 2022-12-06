@@ -21,3 +21,13 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/ruoyi-system/ruoyi-system.iml
+/ruoyi-quartz/ruoyi-quartz.iml
+/ruoyi-generator/ruoyi-generator.iml
+/ruoyi-framework/ruoyi-framework.iml
+/ruoyi-common/ruoyi-common.iml
+/ruoyi-admin/ruoyi-admin.iml
+/ruoyi-admin/target/classes/
+/ruoyi-generator/target/classes/
+/ruoyi-quartz/target/classes/mapper/quartz/
+/ruoyi-system/target/classes/mapper/system/
