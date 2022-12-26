@@ -1,3 +1,4 @@
+package com.ruoyi;
 /**
  * @author monkey
  * @date 2022/12/19 22:31
@@ -8,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /**
- *@ClassName TradeingPlatformApplication
+ *@ClassName com.ruoyi.TradeingPlatformApplication
  * TODO
  *@Author neo
  *@date 2022/12/19 22:31
