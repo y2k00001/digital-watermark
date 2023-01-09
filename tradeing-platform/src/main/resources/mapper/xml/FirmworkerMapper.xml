@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trace.core.mapper.FirmworkerMapper">
+    <update id="updateFirmIdById" parameterType="com.trace.core.entity.Firmworker">
+        UPDATE firmworker SET firm_id=#{firmId} where id=#{id}
+    </update>
+
+    <!--由公司号id查询财务的员工fwId-->
+    <select id="selectTreasurerFwIdByFirmId" resultType="java.lang.Integer">
+        SELECT id
+        FROM (SELECT b.treasurertelephone
+              from firm b WHERE b.id=#{id}) a
+                 left JOIN firmworker c on a.treasurertelephone=c.telephone
+    </select>
+</mapper>

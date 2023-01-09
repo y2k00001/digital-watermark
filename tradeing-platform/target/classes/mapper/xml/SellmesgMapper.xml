@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trace.core.mapper.SellmesgMapper">
+<!--参考AdminAuditController &AuditServiceImpl &AuditMapper制作   可用于企业查询自己所有销售单  可以选择状态 -->
+    <select id="getSellmesgPages" resultType="com.trace.core.entity.Sellmesg">
+        SELECT *
+        FROM (SELECT b.id AS sellmesgid,b.firm_id AS firmid,c.firmname,b.sendarea ,b.kcal,b.num,b.price,b.freight,b.prodarea,
+        c.telephone,c.license_no,b.status FROM sellmesg b left JOIN firm c on b.firm_id=c.id WHERE b.is_deleted=0 )a
+        <where>
+            <if test="status!=null">
+                status= #{status}
+            </if>
+        </where>
+    </select>
+
+    <!--参考AdminAuditController &AuditServiceImpl &AuditMapper制作   可用于卖方挂牌公共区销售单展示缩略列表 -->
+    <select id="publicSellList" resultType="com.trace.core.vo.SellmesgListVO">
+        SELECT *
+        from (SELECT b.id ,b.firm_id,c.firmname,b.sendarea ,b.coaltype1,b.coaltype2,b.kcal,b.num,b.price,b.freight,b.prodarea,b.sulfur,
+                     b.vol1,b.vol2,b.ash,b.water,b.offerbond,c.telephone,c.license_no,c.fax,c.postal,c.register_fund,b.status from sellmesg b left JOIN firm c on b.firm_id=c.id WHERE b.is_deleted=0 )a
+        where status= 3
+    </select>
+
+    <update id="buyDelistById" parameterType="com.trace.core.entity.Sellmesg">
+        UPDATE sellmesg SET status= #{status},buyid= #{buyid} where id=#{id}
+    </update>
+
+    <!--    查保证金总额  为了解冻保证金-->
+    <select id="offerbondTotal" resultType="com.trace.core.vo.BondTotalMidVO">
+        SELECT b.num,b.offerbond
+        FROM sellmesg b WHERE b.id=#{sellmesgId}
+    </select>
+
+    <select id="getAuditVoPages" resultType="com.trace.core.entity.Sellmesg">
+
+        SELECT *
+        FROM (SELECT b.id, b.firm_id, c.firmname, c.represent, b.num, b.offerbond,b.status
+        FROM sellmesg b
+        LEFT JOIN firm c on b.firm_id = c.id) a
+        <where>
+            <if test="status!=null  and status>=3">
+                status>=#{status}
+            </if>
+            <if test="status!=null and status &lt; 3">
+                status=#{status}
+            </if>
+        </where>
+
+    </select>
+</mapper>

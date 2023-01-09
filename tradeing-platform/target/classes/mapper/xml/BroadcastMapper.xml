@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trace.core.mapper.BroadcastMapper">
+
+    <select id="getBroadcastPages" resultType="com.trace.core.entity.Broadcast">
+
+        SELECT b.truename,a.*
+        FROM broadcast a LEFT JOIN `user` b on a.user_id=b.id
+        <where>
+            <if test="userId!=null">
+                a.user_id=#{userId}
+            </if>
+            <if test="status!=null">
+                and status=#{status}
+            </if>
+
+        </where>
+
+    </select>
+
+    <select id="getBroadcastPagesByAdmin" resultType="com.trace.core.entity.Broadcast">
+
+        SELECT b.truename,a.*
+        FROM broadcast a LEFT JOIN `user` b on a.user_id=b.id
+        <where>
+            <!-- <if test="userId!=null">
+                 a.user_id=#{userId}
+             </if>-->
+            <if test="status!=null">
+                and status=#{status}
+            </if>
+
+        </where>
+
+    </select>
+
+</mapper>

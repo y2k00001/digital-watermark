@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trace.core.mapper.BuymesgMapper">
+    <!--参考SellmesgMapper制作   可用于企业查询自己所有采购单  可以选择状态 -->
+    <select id="getBuymesgPages" resultType="com.trace.core.entity.Buymesg">
+        SELECT *
+        FROM (SELECT b.id,b.applicant,b.deliverytime2,b.firm_id,b.sellid,b.buyfirm_name,b.deliveryplace,b.coaltype1,b.coaltype2,b.kcal,b.num,b.price,b.freight,b.shiptype,b.sulfur,
+        b.vol1,b.vol2,b.ash,b.water,b.offerbond,c.telephone,c.license_no,c.fax,c.postal,c.register_fund,b.status
+        from (SELECT * FROM buymesg WHERE sellid =#{firmId}) b left JOIN firm c on b.firm_id=c.id WHERE b.is_deleted=0) a
+        <where>
+            <if test="status!=null">
+            status= #{status}
+            </if>
+        </where>
+    </select>
+    <!--参考SellmesgMapper制作   可用于企业查询自己所有采购单  可以选择状态 -->
+    <select id="getBuymesgPages4" resultType="com.trace.core.entity.Buymesg">
+        SELECT *
+        FROM (SELECT b.id,b.applicant,b.deliverytime2,b.firm_id,b.sellid,b.buyfirm_name,b.deliveryplace,b.coaltype1,b.coaltype2,b.kcal,b.num,b.price,b.freight,b.shiptype,b.sulfur,
+        b.vol1,b.vol2,b.ash,b.water,b.offerbond,c.telephone,c.license_no,c.fax,c.postal,c.register_fund,b.status
+        from (SELECT * FROM buymesg WHERE firm_id =#{firmId}) b left JOIN firm c on b.firm_id=c.id WHERE b.is_deleted=0) a
+        <where>
+            <if test="status!=null">
+            AND status= #{status}
+            </if>
+        </where>
+    </select>
+
+    <!--参考AdminAuditController &AuditServiceImpl &AuditMapper制作   可用于卖方挂牌公共区销售单展示缩略列表 -->
+    <select id="publicBuyList" resultType="com.trace.core.entity.Buymesg">
+        SELECT *
+        FROM (SELECT b.id ,b.firm_id,b.buyfirm_name,b.application_date,
+                     b.deliverytime1,b.deliverytime2,c.firmname,b.deliveryplace,
+                     b.coaltype1,b.coaltype2,b.kcal,b.num,b.price,b.freight,b.shiptype,b.sulfur,
+                     b.vol1,b.vol2,b.ash,b.water,b.offerbond,c.telephone,c.license_no,
+                     c.fax,c.postal,c.register_fund,b.status
+              from buymesg b left JOIN firm c on b.firm_id=c.id WHERE b.is_deleted=0) a
+        WHERE status= 3
+    </select>
+
+    <update id="sellDelistById" parameterType="com.trace.core.entity.Buymesg">
+        UPDATE buymesg SET status= #{status},sellid= #{sellid} where id=#{id}
+    </update>
+<!--//合同上传后status9-->
+    <update id="sellDelistById2" parameterType="com.trace.core.entity.Buymesg">
+        UPDATE buymesg SET status= #{status} where id=#{id}
+    </update>
+<!--    查保证金总额  为了解冻保证金-->
+    <select id="offerbondTotal" resultType="com.trace.core.vo.BondTotalMidVO">
+        SELECT b.num,b.offerbond
+        FROM buymesg b WHERE b.id=#{buymesgId}
+    </select>
+</mapper>

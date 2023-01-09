@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trace.core.mapper.FirmworkerAccountMapper">
+    <!--充值-->
+    <update id="updateAmountById" parameterType="com.trace.core.entity.FirmworkerAccount">
+        UPDATE firmworker_account SET amount= (amount + #{figure}) where fw_id=#{fwId}
+    </update>
+
+
+    <!--缴纳保证金-->
+    <update id="updateFreezeAndAmountById" parameterType="com.trace.core.entity.FirmworkerAccount">
+        UPDATE firmworker_account SET amount= (amount - #{figure}),freeze_amount=(freeze_amount + #{figure}) where fw_id=#{fwId}
+    </update>
+
+    <!--查询余额保证金-->
+    <select id="selectAccountById" parameterType="com.trace.core.entity.FirmworkerAccount" resultType="com.trace.core.entity.FirmworkerAccount">
+        SELECT amount,freeze_amount,fw_id FROM firmworker_account where fw_id=#{fwId}
+    </select>
+
+    <!--查询账户资金信息  参数是@PathVariable("id")  Integer id firmworkerId-->
+    <select id="selectAccountByFirmworkerId"  resultType="com.trace.core.entity.FirmworkerAccount">
+        SELECT amount,freeze_amount,fw_id FROM firmworker_account where fw_id=#{id}
+    </select>
+
+    <!--解冻保证金-->
+    <update id="unfreezeFundsById" parameterType="com.trace.core.entity.FirmworkerAccount">
+        UPDATE firmworker_account SET amount= (amount + #{figure}),freeze_amount=(freeze_amount - #{figure}) where fw_id=#{fwId}
+    </update>
+</mapper>

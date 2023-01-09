@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trace.core.mapper.TransactionbillsMapper">
+    <update id="confirmContract" parameterType="com.trace.core.vo.TransactionbillsListVO">
+        UPDATE transactionbills SET status= 1 WHERE id=#{id}
+    </update>
+
+<!-- 查询有关本企业的所有合同订单列表 -->
+    <select id="showTransactionbillsList" resultType="com.trace.core.vo.TransactionbillsListVO">
+        SELECT a.tbid as id,d.sellfirmname,a.buyfirmname,agreementpath,status,sellmesg_id as sellmesgId ,buymesg_id as buymesgId,sellid,buyid
+        FROM
+            (SELECT b.id as tbid,c.firmname as buyfirmname,b.agreementpath,b.status,b.sellmesg_id,b.buymesg_id,b.buyid,b.sellid
+             from (SELECT * FROM transactionbills a WHERE a.buyid=#{firmId} OR a.sellid=#{firmId} ) b
+                      left JOIN firm c on b.buyid=c.id WHERE b.is_deleted=0) a left JOIN (SELECT id,firmname as sellfirmname FROM firm )d on a.sellid=d.id
+    </select>
+<!--    确认收货&闭终合同订单-->
+    <update id="confirmReceiptCloseContract" parameterType="com.trace.core.vo.TransactionbillsListVO">
+        UPDATE transactionbills SET status= 2 WHERE id=#{id}
+    </update>
+    <!-- 查询本合同状态 -->
+    <select id="checkStatus" parameterType="com.trace.core.vo.TransactionbillsListVO" resultType="java.lang.Integer">
+        SELECT status FROM transactionbills WHERE id=#{id}
+    </select>
+
+    <!--参考SellmesgMapper制作   可用于企业查询自己所有采购单  可以选择状态 -->
+    <select id="getTransactionbillsPages" resultType="com.trace.core.vo.TransactionbillsListVO">
+        SELECT *
+        FROM (
+            SELECT a.tbid as id,d.sellfirmname,a.buyfirmname,agreementpath,status,sellmesg_id as sellmesgId ,buymesg_id as buymesgId,sellid,buyid
+        FROM(SELECT b.id as tbid,c.firmname as buyfirmname,b.agreementpath,b.status,b.sellmesg_id,b.buymesg_id,b.buyid,b.sellid
+        from (SELECT * FROM transactionbills a WHERE a.buyid=#{firmId} OR a.sellid=#{firmId} ) b
+        left JOIN firm c on b.buyid=c.id WHERE b.is_deleted=0) a left JOIN (SELECT id,firmname as sellfirmname FROM firm )d on a.sellid=d.id) z
+        <where>
+            <if test="status!=null">
+                status= #{status}
+            </if>
+        </where>
+    </select>
+</mapper>
