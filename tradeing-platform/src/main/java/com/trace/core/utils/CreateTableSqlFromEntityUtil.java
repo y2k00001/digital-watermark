@@ -2,6 +2,7 @@ package com.trace.core.utils;
 
 import cn.hutool.core.text.StrBuilder;
 import cn.hutool.core.util.StrUtil;
+import com.trace.core.entity.*;
 
 
 import java.io.*;
@@ -19,10 +20,12 @@ public class CreateTableSqlFromEntityUtil {
     public static void main(String[] a) {
         // 实体类的位置
         List<Class> classList = Arrays.asList(
-                User.class
+                 Audit.class, Broadcast.class, Broadcastread.class, Buymesg.class, Firm.class,FirmAttach.class,Firmworker.class,
+                FirmworkerAccount.class,Personmesg.class,Sellmesg.class,Transactionbills.class,TransFlow.class,
+                User.class,Verifyinfo.class
         );
         // 生成的sql语句的位置
-        String outputPath = "D:\\excel\\user.txt";
+        String outputPath = "sql/user.txt";
         StrBuilder sb = new StrBuilder();
         classList.forEach(x->{
             String sql = generateTableSql(x, null);
@@ -152,11 +155,4 @@ public class CreateTableSqlFromEntityUtil {
 }
 
 
-class User{
-    private String id;
-    private String username;
-    private String password;
-    private LocalDateTime createTime;
-    private LocalDateTime updateTime;
-}
 
