@@ -1,7 +1,6 @@
 package com.trace.core.controller.api;
 
 
-import com.trace.core.entity.Buymesg;
 import com.trace.core.entity.FirmworkerAccount;
 import com.trace.core.entity.Sellmesg;
 import com.trace.core.exception.Assert;

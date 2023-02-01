@@ -4,6 +4,7 @@ package com.trace.core.controller.api;
 import com.trace.core.entity.Firmworker;
 import com.trace.core.exception.Assert;
 import com.trace.core.mapper.FirmworkerMapper;
+import com.trace.core.service.FirmworkerService;
 import com.trace.core.utils.*;
 import com.trace.core.vo.FirmworkerInfoVo;
 import com.trace.core.vo.LoginVo;
@@ -12,7 +13,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-import com.trace.core.service.FirmworkerService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;

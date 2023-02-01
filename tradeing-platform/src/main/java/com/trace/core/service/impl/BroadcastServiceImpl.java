@@ -1,12 +1,10 @@
 package com.trace.core.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.trace.core.entity.Broadcast;
-import com.trace.core.entity.Broadcastread;
 import com.trace.core.mapper.BroadcastMapper;
 import com.trace.core.service.BroadcastService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.trace.core.utils.PageUtils;
 import com.trace.core.utils.Query;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.trace.core.service;
 
-import com.trace.core.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.trace.core.entity.User;
 import com.trace.core.utils.PageUtils;
 import com.trace.core.vo.LoginVo;
 import com.trace.core.vo.UserInfoVo;

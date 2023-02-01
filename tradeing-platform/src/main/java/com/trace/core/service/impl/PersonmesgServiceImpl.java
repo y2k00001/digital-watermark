@@ -1,9 +1,9 @@
 package com.trace.core.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.trace.core.entity.Personmesg;
 import com.trace.core.mapper.PersonmesgMapper;
 import com.trace.core.service.PersonmesgService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

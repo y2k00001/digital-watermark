@@ -1,9 +1,8 @@
 package com.trace.core.controller.api;
 
 
-import com.trace.core.entity.Firmworker;
+import com.trace.core.entity.Firm;
 import com.trace.core.service.FirmService;
-import com.trace.core.service.FirmworkerService;
 import com.trace.core.utils.R;
 import com.trace.core.vo.FirmInfoSaveVO;
 import io.swagger.annotations.Api;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-
-import com.trace.core.entity.Firm;
 /**
  * <p>
  *  前端控制器

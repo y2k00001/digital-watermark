@@ -1,7 +1,7 @@
 package com.trace.core.mapper;
 
-import com.trace.core.entity.Personmesg;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.trace.core.entity.Personmesg;
 
 /**
  * <p>

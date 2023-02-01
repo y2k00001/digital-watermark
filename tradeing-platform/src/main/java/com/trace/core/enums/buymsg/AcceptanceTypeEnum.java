@@ -1,6 +1,5 @@
 package com.trace.core.enums.buymsg;
 
-import com.trace.core.enums.TransTypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

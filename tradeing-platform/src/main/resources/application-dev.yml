@@ -1,5 +1,5 @@
 server:
-  port: 8055 # 服务端口
+  port: 7055 # 服务端口
 
 spring:
   datasource: # mysql数据库连接
@@ -30,6 +30,6 @@ logging:
 aliyun:
   oss:
     endpoint: oss-cn-guangzhou.aliyuncs.com
-    keyId: LT*************zj
-    keySecret: iym*************kE8
-    bucketName: t*********t
+    keyId: LT******zj
+    keySecret: iym******kE8
+    bucketName: t******t

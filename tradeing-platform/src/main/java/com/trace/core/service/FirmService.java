@@ -1,7 +1,7 @@
 package com.trace.core.service;
 
-import com.trace.core.entity.Firm;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.trace.core.entity.Firm;
 import com.trace.core.vo.FirmInfoSaveVO;
 
 /**

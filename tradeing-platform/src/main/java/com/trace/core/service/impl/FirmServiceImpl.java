@@ -1,6 +1,7 @@
 package com.trace.core.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.trace.core.entity.Firm;
 import com.trace.core.entity.FirmAttach;
 import com.trace.core.entity.Firmworker;
@@ -9,8 +10,6 @@ import com.trace.core.mapper.FirmAttachMapper;
 import com.trace.core.mapper.FirmMapper;
 import com.trace.core.mapper.FirmworkerMapper;
 import com.trace.core.service.FirmService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.trace.core.utils.R;
 import com.trace.core.utils.ResponseEnum;
 import com.trace.core.vo.FirmInfoSaveVO;
 import org.springframework.beans.BeanUtils;

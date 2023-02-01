@@ -8,10 +8,8 @@ import com.trace.core.exception.Assert;
 import com.trace.core.exception.BusinessException;
 import com.trace.core.service.FirmworkerService;
 import com.trace.core.service.UserService;
-import com.trace.core.utils.CurrentUserUtil;
 import com.trace.core.utils.JwtUtils;
 import com.trace.core.utils.ResponseEnum;
-import com.trace.core.utils.CurrentUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -85,4 +83,3 @@ public class LoginInterceptor implements HandlerInterceptor {
         return true;
     }
 }
- 
