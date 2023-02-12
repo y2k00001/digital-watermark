@@ -24,7 +24,7 @@ mybatis-plus: #mybatis
 
 logging:
   level:
-    - com.trace.core: debug
+    - com.trace: debug
 
 
 aliyun:
