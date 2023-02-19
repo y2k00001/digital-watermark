@@ -8,9 +8,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.net.CacheRequest;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -25,6 +27,7 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @ApiModel(value="FirmworkerAccount对象", description="用户账户")
+@Accessors(chain = true)
 public class FirmworkerAccount implements Serializable {
 
     private static final long serialVersionUID = 1L;
