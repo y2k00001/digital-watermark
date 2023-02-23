@@ -7,7 +7,6 @@ import lombok.Getter;
  * @Author Another
  * @date 2022/9/16 10:57
  */
-
 @AllArgsConstructor
 @Getter
 public enum FwRoleEnum {
