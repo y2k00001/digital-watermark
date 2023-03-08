@@ -17,16 +17,67 @@ import java.util.Map;
  */
 public interface BuymesgService extends IService<Buymesg> {
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/8 13:56
+     * @param buymesg
+     * @return {@link Integer}
+     **/
     Integer registerSave(Buymesg buymesg);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/8 13:56
+     * @param buymesg
+     * @return {@link Integer}
+     **/
     Integer updateSubmit(Buymesg buymesg);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/8 13:57
+     * @param params
+     * @return {@link PageUtils}
+     **/
     PageUtils publicBuyList(Map<String, Object> params);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/8 13:57
+     * @param params
+     * @return {@link PageUtils}
+     **/
     PageUtils queryPage(Map<String, Object> params);
+    
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/8 13:57
+     * @param params
+     * @return {@link PageUtils}
+     **/
     PageUtils queryPage2(Map<String, Object> params);
+    
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/8 13:57
+     * @param buymesg
+     * @return {@link Integer}
+     **/
     Integer sellDelist(Buymesg buymesg);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/8 13:57
+     * @param id
+     * @return {@link Buymesg}
+     **/
     Buymesg getBuymesgById(Integer id);
 
 

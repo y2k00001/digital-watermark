@@ -18,9 +18,23 @@ public interface BroadcastService extends IService<Broadcast> {
 
     //PageUtils queryPage(Map<String, Object> params);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/8 13:56
+     * @param params
+     * @return {@link PageUtils}
+     **/
     PageUtils queryPageByAdmin(Map<String, Object> params);
 
 
-
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/8 13:56
+     * @param params
+     * @param userId
+     * @return {@link PageUtils}
+     **/
     PageUtils queryPageById(Map<String, Object> params,Integer userId);
 }
