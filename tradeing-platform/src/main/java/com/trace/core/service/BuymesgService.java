@@ -74,9 +74,9 @@ public interface BuymesgService extends IService<Buymesg> {
     /**
      * description  
      * @author monkey
-     * @datetime  2023/3/8 13:57
+     * @datetime  2023/3/8 13:59
      * @param id
-     * @return {@link Buymesg}
+     * @return {@link com.trace.core.entity.Buymesg}
      **/
     Buymesg getBuymesgById(Integer id);
 

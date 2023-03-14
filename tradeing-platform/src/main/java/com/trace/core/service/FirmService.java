@@ -14,5 +14,12 @@ import com.trace.core.vo.FirmInfoSaveVO;
  */
 public interface FirmService extends IService<Firm> {
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/14 11:54
+     * @param firmInfoSaveVO
+     * @return {@link boolean}
+     **/
     boolean saveFirmInfoSaveVO(FirmInfoSaveVO firmInfoSaveVO);
 }

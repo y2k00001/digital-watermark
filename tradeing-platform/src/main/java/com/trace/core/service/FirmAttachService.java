@@ -16,5 +16,12 @@ import java.util.List;
  */
 public interface FirmAttachService extends IService<FirmAttach> {
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/14 11:54
+     * @param firmId
+     * @return {@link List< FirmAttachVO>}
+     **/
     List<FirmAttachVO> selectFirmAttachVOList(Integer firmId);
 }

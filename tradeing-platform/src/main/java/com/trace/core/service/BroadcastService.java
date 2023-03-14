@@ -31,10 +31,10 @@ public interface BroadcastService extends IService<Broadcast> {
     /**
      * description  
      * @author monkey
-     * @datetime  2023/3/8 13:56
+     * @datetime  2023/3/8 13:59
      * @param params
-     * @param userId
-     * @return {@link PageUtils}
+ * @param userId
+     * @return {@link com.trace.core.utils.PageUtils}
      **/
     PageUtils queryPageById(Map<String, Object> params,Integer userId);
 }

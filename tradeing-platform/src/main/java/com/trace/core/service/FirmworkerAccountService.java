@@ -13,6 +13,12 @@ import com.trace.core.entity.FirmworkerAccount;
  */
 
 public interface FirmworkerAccountService extends IService<FirmworkerAccount> {
-
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/14 11:54
+     * @param firmworkerAccount
+     * @return 
+     **/
     void saveFirmworkerAccount(FirmworkerAccount firmworkerAccount);
 }

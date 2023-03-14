@@ -18,6 +18,13 @@ import java.util.Map;
  */
 public interface FirmworkerService extends IService<Firmworker> {
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/14 11:55
+     * @param params
+     * @return {@link PageUtils}
+     **/
     PageUtils queryPage(Map<String, Object> params);
 
     FirmworkerInfoVo login(LoginVo loginVo);
