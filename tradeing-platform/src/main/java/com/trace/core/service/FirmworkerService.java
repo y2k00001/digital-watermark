@@ -19,11 +19,11 @@ import java.util.Map;
 public interface FirmworkerService extends IService<Firmworker> {
 
     /**
-     * description  
+     * description
      * @author monkey
-     * @datetime  2023/3/14 11:55
+     * @datetime  2023/3/14 12:00
      * @param params
-     * @return {@link PageUtils}
+     * @return {@link com.trace.core.utils.PageUtils}
      **/
     PageUtils queryPage(Map<String, Object> params);
 

@@ -17,11 +17,11 @@ import java.util.List;
 public interface FirmAttachService extends IService<FirmAttach> {
 
     /**
-     * description  
+     * description
      * @author monkey
-     * @datetime  2023/3/14 11:54
+     * @datetime  2023/3/14 12:00
      * @param firmId
-     * @return {@link List< FirmAttachVO>}
+     * @return {@link java.util.List<com.trace.core.vo.FirmAttachVO>}
      **/
     List<FirmAttachVO> selectFirmAttachVOList(Integer firmId);
 }
