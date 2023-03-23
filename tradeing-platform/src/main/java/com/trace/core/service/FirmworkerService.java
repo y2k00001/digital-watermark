@@ -27,7 +27,22 @@ public interface FirmworkerService extends IService<Firmworker> {
      **/
     PageUtils queryPage(Map<String, Object> params);
 
+    /**
+     * 登录
+     * @author monkey
+     * @datetime  2023/3/23 09:37
+     * @param loginVo
+     * @return {@link FirmworkerInfoVo}
+     **/
     FirmworkerInfoVo login(LoginVo loginVo);
 
+
+    /**
+     * 注册
+     * @author monkey
+     * @datetime  2023/3/23 09:37
+     * @param firmworker
+     * @return {@link Integer}
+     **/
     Integer register(Firmworker firmworker);
 }
