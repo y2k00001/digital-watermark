@@ -16,11 +16,39 @@ import java.util.Map;
  */
 public interface TransactionbillsService extends IService<Transactionbills> {
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/27 23:35
+     * @param transactionbills
+     * @return {@link Integer}
+     **/
     Integer uploadTransactionBills(Transactionbills transactionbills);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/27 23:35
+     * @param params
+     * @return {@link PageUtils}
+     **/
     PageUtils showTransactionbillsList(Map<String, Object> params);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/27 23:35
+     * @param params
+     * @return {@link PageUtils}
+     **/
     PageUtils queryPage(Map<String, Object> params);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/3/27 23:35
+     * @param id
+     * @return {@link Transactionbills}
+     **/
     Transactionbills getTransactionbillsById(Integer id);
 }
