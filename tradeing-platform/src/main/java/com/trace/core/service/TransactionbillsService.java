@@ -46,9 +46,9 @@ public interface TransactionbillsService extends IService<Transactionbills> {
     /**
      * description  
      * @author monkey
-     * @datetime  2023/3/27 23:35
+     * @datetime  2023/3/28 17:01
      * @param id
-     * @return {@link Transactionbills}
+     * @return {@link com.trace.core.entity.Transactionbills}
      **/
     Transactionbills getTransactionbillsById(Integer id);
 }
