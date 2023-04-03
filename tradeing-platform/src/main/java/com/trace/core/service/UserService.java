@@ -20,7 +20,7 @@ import java.util.Map;
 public interface UserService extends IService<User> {
 
     /**
-     * description  
+     * description
      * @author monkey
      * @datetime  2023/3/30 23:40
      * @param params
@@ -29,16 +29,16 @@ public interface UserService extends IService<User> {
     PageUtils queryPage(Map<String, Object> params);
 
     /**
-     * description  
+     * description
      * @author monkey
      * @datetime  2023/3/30 23:40
      * @param user
-     * @return 
+     * @return
      **/
     void register(User user);
 
     /**
-     * description  
+     * description
      * @author monkey
      * @datetime  2023/3/30 23:40
      * @param loginVo
@@ -47,7 +47,7 @@ public interface UserService extends IService<User> {
     UserInfoVo login(LoginVo loginVo);
 
     /**
-     * description  
+     * description
      * @author monkey
      * @datetime  2023/3/30 23:40
      * @param id
@@ -56,11 +56,11 @@ public interface UserService extends IService<User> {
     UserVo getUserById(Integer id);
 
     /**
-     * description  
+     * description
      * @author monkey
-     * @datetime  2023/3/30 23:40
+     * @datetime  2023/4/3 14:19
      * @param user
-     * @return {@link User}
+     * @return {@link com.trace.core.entity.User}
      **/
     User getByUserInfo(User user);
 }

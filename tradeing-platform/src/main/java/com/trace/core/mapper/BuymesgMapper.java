@@ -14,14 +14,62 @@ import com.trace.core.vo.BondTotalMidVO;
  */
 public interface BuymesgMapper extends BaseMapper<Buymesg> {
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/3 14:19
+     * @param buymesgId
+     * @return {@link BondTotalMidVO}
+     **/
     BondTotalMidVO offerbondTotal(Integer buymesgId) ;
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/3 14:19
+     * @param buymesg
+     * @return {@link Integer}
+     **/
     Integer sellDelistById(Buymesg buymesg);
+    
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/3 14:19
+     * @param buymesg
+     * @return {@link Integer}
+     **/
     Integer sellDelistById2(Buymesg buymesg);
+    
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/3 14:19
+     * @param page
+     * @param status
+     * @param firmId
+     * @return {@link IPage< Buymesg>}
+     **/
     IPage<Buymesg> getBuymesgPages(IPage<Buymesg> page, Integer status, Integer firmId);
 
 //    IPage<BuymesgListVO> publicBuyList(IPage<BuymesgListVO> page);
-IPage<Buymesg> publicBuyList(IPage<Buymesg> page);
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/3 14:19
+     * @param page
+     * @return {@link IPage< Buymesg>}
+     **/
+    IPage<Buymesg> publicBuyList(IPage<Buymesg> page);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/3 14:20
+     * @param page
+     * @param status
+     * @param firmId
+     * @return {@link IPage< Buymesg>}
+     **/
     IPage<Buymesg> getBuymesgPages4(IPage<Buymesg> page, Integer status, Integer firmId);
 }

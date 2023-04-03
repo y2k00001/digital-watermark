@@ -17,7 +17,24 @@ public interface BroadcastMapper extends BaseMapper<Broadcast> {
 
     //IPage<Broadcast> getBroadcastPages(IPage<Broadcast> page, @Param("status") Integer status);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/3 14:19
+     * @param page
+     * @param status
+     * @return {@link IPage< Broadcast>}
+     **/
     IPage<Broadcast> getBroadcastPagesByAdmin(IPage<Broadcast> page,@Param("status") Integer status);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/3 14:19
+     * @param page
+     * @param status
+     * @param userId
+     * @return {@link IPage< Broadcast>}
+     **/
     IPage<Broadcast> getBroadcastPages(IPage<Broadcast> page, @Param("status") Integer status,@Param("userId") Integer userId);
 }
