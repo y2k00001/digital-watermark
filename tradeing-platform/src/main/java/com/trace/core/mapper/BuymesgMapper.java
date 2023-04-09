@@ -65,11 +65,11 @@ public interface BuymesgMapper extends BaseMapper<Buymesg> {
     /**
      * description  
      * @author monkey
-     * @datetime  2023/4/3 14:20
+     * @datetime  2023/4/3 14:24
      * @param page
-     * @param status
-     * @param firmId
-     * @return {@link IPage< Buymesg>}
+ * @param status
+ * @param firmId
+     * @return {@link com.baomidou.mybatisplus.core.metadata.IPage<com.trace.core.entity.Buymesg>}
      **/
     IPage<Buymesg> getBuymesgPages4(IPage<Buymesg> page, Integer status, Integer firmId);
 }
