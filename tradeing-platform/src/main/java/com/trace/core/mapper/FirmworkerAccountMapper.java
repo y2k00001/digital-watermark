@@ -12,10 +12,48 @@ import com.trace.core.entity.FirmworkerAccount;
  * @since 2022-09-15
  */
 public interface FirmworkerAccountMapper extends BaseMapper<FirmworkerAccount> {
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/15 00:36
+     * @param firmworkerAccount
+     * @return {@link int}
+     **/
     int updateAmountById(FirmworkerAccount firmworkerAccount);
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/15 00:36
+     * @param firmworkerAccount
+     * @return {@link int}
+     **/
     int updateFreezeAndAmountById(FirmworkerAccount firmworkerAccount);
+    
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/15 00:36
+     * @param firmworkerAccount
+     * @return {@link FirmworkerAccount}
+     **/
     FirmworkerAccount selectAccountById(FirmworkerAccount firmworkerAccount);
+    
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/15 00:36
+     * @param id
+     * @return {@link FirmworkerAccount}
+     **/
     FirmworkerAccount selectAccountByFirmworkerId(Integer id);
+    
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/15 00:36
+     * @param firmworkerAccount
+     * @return {@link Integer}
+     **/
 
     Integer unfreezeFundsById(FirmworkerAccount firmworkerAccount);
 }
