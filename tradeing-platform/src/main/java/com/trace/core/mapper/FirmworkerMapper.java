@@ -12,7 +12,21 @@ import com.trace.core.entity.Firmworker;
  * @since 2022-09-15
  */
 public interface FirmworkerMapper extends BaseMapper<Firmworker> {
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/17 23:22
+     * @param firmworker
+     * @return {@link int}
+     **/
     int updateFirmIdById(Firmworker firmworker);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/4/17 23:22
+     * @param id
+     * @return {@link Integer}
+     **/
     Integer selectTreasurerFwIdByFirmId(Integer id);
 }
