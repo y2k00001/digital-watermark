@@ -24,9 +24,9 @@ public interface FirmworkerMapper extends BaseMapper<Firmworker> {
     /**
      * description  
      * @author monkey
-     * @datetime  2023/4/17 23:22
+     * @datetime  2023/4/20 09:18
      * @param id
-     * @return {@link Integer}
+     * @return {@link java.lang.Integer}
      **/
     Integer selectTreasurerFwIdByFirmId(Integer id);
 }
