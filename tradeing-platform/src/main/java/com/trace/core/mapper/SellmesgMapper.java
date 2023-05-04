@@ -16,12 +16,50 @@ import org.apache.ibatis.annotations.Param;
  * @since 2022-09-15
  */
 public interface SellmesgMapper extends BaseMapper<Sellmesg> {
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/5/4 14:01
+     * @param sellmesgId
+     * @return {@link BondTotalMidVO}
+     **/
     BondTotalMidVO offerbondTotal(Integer sellmesgId) ;
+    
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/5/4 14:01
+     * @param page
+     * @param status
+     * @return {@link IPage< Sellmesg>}
+     **/
     IPage<Sellmesg> getSellmesgPages(IPage<Sellmesg> page, @Param("status") Integer status);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/5/4 14:01
+     * @param page
+     * @return {@link IPage< SellmesgListVO>}
+     **/
     IPage<SellmesgListVO> publicSellList(IPage<SellmesgListVO> page);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/5/4 14:01
+     * @param sellmesg
+     * @return {@link Integer}
+     **/
     Integer buyDelistById(Sellmesg sellmesg);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/5/4 14:01
+     * @param page
+     * @param status
+     * @return {@link IPage< Sellmesg>}
+     **/
     IPage<Sellmesg> getAuditVoPages(IPage<Sellmesg> page,@Param("status") Integer status);
 }
