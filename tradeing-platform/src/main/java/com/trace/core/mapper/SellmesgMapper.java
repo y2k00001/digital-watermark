@@ -56,10 +56,10 @@ public interface SellmesgMapper extends BaseMapper<Sellmesg> {
     /**
      * description  
      * @author monkey
-     * @datetime  2023/5/4 14:01
+     * @datetime  2023/5/4 14:03
      * @param page
-     * @param status
-     * @return {@link IPage< Sellmesg>}
+ * @param status
+     * @return {@link com.baomidou.mybatisplus.core.metadata.IPage<com.trace.core.entity.Sellmesg>}
      **/
     IPage<Sellmesg> getAuditVoPages(IPage<Sellmesg> page,@Param("status") Integer status);
 }
