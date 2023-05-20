@@ -44,7 +44,7 @@ public interface TransactionbillsMapper extends BaseMapper<Transactionbills> {
     IPage<TransactionbillsListVO> showTransactionbillsList(IPage<TransactionbillsListVO> page, Integer firmId);
 
     /**
-     * description  
+     * description
      * @author monkey
      * @datetime  2023/5/15 09:22
      * @param transactionbillsListVO
@@ -53,9 +53,9 @@ public interface TransactionbillsMapper extends BaseMapper<Transactionbills> {
     Integer checkStatus(TransactionbillsListVO transactionbillsListVO);
 
     /**
-     * description  
+     * description
      * @author monkey
-     * @datetime  2023/5/15 09:22
+     * @datetime  2023/5/15 09:23
      * @param page
      * @param status
      * @param firmId

@@ -18,6 +18,13 @@ import java.util.Map;
  */
 public interface AuditService extends IService<Audit> {
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/5/21 00:16
+     * @param params
+     * @return {@link PageUtils}
+     **/
     PageUtils queryPage(Map<String, Object> params);
 
 
