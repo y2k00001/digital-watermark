@@ -21,16 +21,38 @@ public interface AuditService extends IService<Audit> {
     /**
      * description  
      * @author monkey
-     * @datetime  2023/5/21 00:16
+     * @datetime  2023/5/22 22:56
      * @param params
-     * @return {@link PageUtils}
+     * @return {@link com.trace.core.utils.PageUtils}
      **/
     PageUtils queryPage(Map<String, Object> params);
 
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/5/29 14:29
+     * @param id
+     * @return {@link FirmInfoVo}
+     **/
     FirmInfoVo getDetailById(Integer id);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/5/29 14:29
+     * @param auditVO
+     * @return 
+     **/
     void approval(AuditVO auditVO);
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/5/29 14:29
+     * @param to
+     * @param password
+     * @return 
+     **/
     void sendMail(String to,String password);
 }
