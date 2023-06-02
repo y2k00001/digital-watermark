@@ -19,7 +19,7 @@ import java.util.Map;
 public interface AuditService extends IService<Audit> {
 
     /**
-     * description  
+     * description
      * @author monkey
      * @datetime  2023/5/22 22:56
      * @param params
@@ -29,7 +29,7 @@ public interface AuditService extends IService<Audit> {
 
 
     /**
-     * description  
+     * description
      * @author monkey
      * @datetime  2023/5/29 14:29
      * @param id
@@ -38,21 +38,21 @@ public interface AuditService extends IService<Audit> {
     FirmInfoVo getDetailById(Integer id);
 
     /**
-     * description  
+     * description
      * @author monkey
      * @datetime  2023/5/29 14:29
      * @param auditVO
-     * @return 
+     * @return
      **/
     void approval(AuditVO auditVO);
 
     /**
-     * description  
+     * description
      * @author monkey
-     * @datetime  2023/5/29 14:29
+     * @datetime  2023/5/29 14:30
      * @param to
      * @param password
-     * @return 
+     * @return
      **/
     void sendMail(String to,String password);
 }
