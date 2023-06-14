@@ -18,7 +18,7 @@ public interface BroadcastMapper extends BaseMapper<Broadcast> {
     //IPage<Broadcast> getBroadcastPages(IPage<Broadcast> page, @Param("status") Integer status);
 
     /**
-     * description  
+     * description
      * @author monkey
      * @datetime  2023/4/3 14:19
      * @param page
@@ -28,12 +28,12 @@ public interface BroadcastMapper extends BaseMapper<Broadcast> {
     IPage<Broadcast> getBroadcastPagesByAdmin(IPage<Broadcast> page,@Param("status") Integer status);
 
     /**
-     * description  
+     * description
      * @author monkey
      * @datetime  2023/4/3 14:24
      * @param page
- * @param status
- * @param userId
+        * @param status
+        * @param userId
      * @return {@link com.baomidou.mybatisplus.core.metadata.IPage<com.trace.core.entity.Broadcast>}
      **/
     IPage<Broadcast> getBroadcastPages(IPage<Broadcast> page, @Param("status") Integer status,@Param("userId") Integer userId);

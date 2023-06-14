@@ -16,6 +16,14 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface AuditMapper extends BaseMapper<Audit> {
 
+    /**
+     * description  
+     * @author monkey
+     * @datetime  2023/6/14 09:43
+     * @param page
+     * @param status
+     * @return {@link IPage< AuditRegisterVo>}
+     **/
     IPage<AuditRegisterVo> getAuditVoPages(IPage<AuditRegisterVo> page, @Param("status") Integer status);
 
 }
