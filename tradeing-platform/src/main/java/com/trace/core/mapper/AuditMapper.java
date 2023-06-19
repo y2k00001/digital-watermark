@@ -19,10 +19,10 @@ public interface AuditMapper extends BaseMapper<Audit> {
     /**
      * description  
      * @author monkey
-     * @datetime  2023/6/14 09:43
+     * @datetime  2023/6/14 10:00
      * @param page
-     * @param status
-     * @return {@link IPage< AuditRegisterVo>}
+ * @param status
+     * @return {@link com.baomidou.mybatisplus.core.metadata.IPage<com.trace.core.vo.AuditRegisterVo>}
      **/
     IPage<AuditRegisterVo> getAuditVoPages(IPage<AuditRegisterVo> page, @Param("status") Integer status);
 
